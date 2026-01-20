@@ -1,0 +1,253 @@
+*{ box-sizing:border-box; }
+body{ margin:0; font-family: Arial, sans-serif; color:#1a1a1a; }
+.container{ width:min(1000px, calc(100% - 32px)); margin:0 auto; }
+
+.section{ padding:60px 0; }
+section[id]{
+  scroll-margin-top: 150px; /* iestati nedaudz vairak par header augstumu */
+}
+.alt{ background:#f7f2ee; }
+.muted{ color:#666; }
+
+.site-header{
+  position: sticky;
+  top:0;
+  z-index:100;
+  height:110px;
+  overflow:hidden;
+  border-bottom:1px solid rgba(0,0,0,.08);
+  background:#fff;
+}
+
+/* šis ir galvenais - attēls aizpilda visu header */
+.header-bg{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit: cover;      /* aizpilda visu, apgriež malas */
+  object-position: center;/* ja vajag pabīdīt: center 45% */
+}
+
+.header-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 170%;        /* LOGO AUGSTUMS */
+  max-width: 90%;
+  object-fit: contain;
+  z-index: 2;
+  pointer-events: none;
+}
+
+
+/* hamburger pa virsu logo */
+.icon-btn{
+  border:none;
+  background: rgba(255,255,255,.92);
+  width:44px;
+  height:44px;
+  border-radius:999px;
+  font-size:22px;
+  cursor:pointer;
+}
+
+.menu-btn{
+  position:absolute;
+  left:12px;
+  top:50%;
+  transform: translateY(-50%);
+  z-index:5;
+}
+
+@media (max-width:640px){
+  .site-header{ height:78px; }
+}
+
+/* MENU */
+.mobile-menu{
+  position:fixed;
+  inset:0;
+  background: rgba(0,0,0,.40);
+  display:none;
+  z-index:999;
+}
+.mobile-menu.open{ display:block; }
+
+.mobile-panel{
+  background:#fff;
+  border-radius:16px;
+  padding:14px;
+  margin:12px;
+  max-width:520px;
+}
+.mobile-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:10px;
+}
+.mobile-title{ font-weight:700; }
+
+.m-link{
+  display:block;
+  padding:12px;
+  border-radius:12px;
+  text-decoration:none;
+  color:#1a1a1a;
+  font-weight:700;
+}
+.m-link:hover{ background:#f2f2f2; }
+.m-cta{ background:#e6c9b5; }
+
+.h1{ font-size:34px; margin:0 0 10px; }
+.h2{ font-size:24px; margin:0 0 10px; }
+
+.btn{
+  display:inline-block;
+  padding:12px 16px;
+  border-radius:999px;
+  background:#e6c9b5;
+  text-decoration:none;
+  color:#1a1a1a;
+  font-weight:700;
+  border:none;
+}
+.btn-ghost{ background:#fff; border:1px solid rgba(0,0,0,.1); }
+.full{ width:100%; }
+
+.actions{ display:flex; gap:10px; flex-wrap:wrap; margin-top:12px; }
+
+.form{
+  background:#fff;
+  padding:16px;
+  border-radius:16px;
+  border:1px solid rgba(0,0,0,.08);
+}
+.form label{ display:block; margin-top:10px; font-weight:700; }
+.form input, .form textarea{
+  width:100%;
+  padding:12px;
+  border-radius:12px;
+  border:1px solid rgba(0,0,0,.15);
+  margin-top:6px;
+}
+
+.row{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:10px;
+  margin-top:10px;
+}
+@media (max-width:700px){
+  .row{ grid-template-columns:1fr; }
+}
+
+.rules{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  flex-wrap:wrap;
+  margin:12px 0;
+}
+.cb{ display:flex; align-items:center; gap:10px; font-weight:700; }
+.link{ color:#1a1a1a; font-weight:700; text-decoration:none; }
+.link:hover{ text-decoration:underline; }
+
+.status{ margin-top:12px; font-weight:700; }
+
+
+
+
+
+
+
+/* =======================================
+   FIX: lai anchor (#cenradis u.c.) nenogriež virsrakstu zem sticky header
+   ======================================= */
+
+/* ja header augstums mainas, te vari pamainit ciparu */
+:root {
+  --header-offset: 60px;
+}
+
+/* visam lapas scroll uz #... pieliek rezervi augsa */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-offset);
+}
+
+/* papildus drošībai: katrai sadaļai anchor rezerve */
+section[id] {
+  scroll-margin-top: var(--header-offset);
+}
+
+
+
+
+
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.instagram-logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid #e4c7b2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+}
+
+.instagram-logo img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.instagram-logo:hover {
+  background-color: #e4c7b2;
+}
+
+/* cenradis */
+.price-list {
+  margin-top: 30px;
+  max-width: 620px;
+}
+
+.price-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.price-item:last-child {
+  border-bottom: none;
+}
+
+.service {
+  font-weight: 500;
+  max-width: 75%;
+  line-height: 1.5;
+}
+
+.service small {
+  display: block;
+  font-size: 0.85em;
+  opacity: 0.7;
+  margin-top: 4px;
+}
+
+.price {
+  font-weight: 600;
+  white-space: nowrap;
+}
+

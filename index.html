@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Her Place — Skropstas</title>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+
+  <header class="site-header" id="top">
+    <!-- FONA BILDE (header fons) -->
+    <img class="header-bg" src="./images/background.jpg" alt="background">
+
+    <!-- hamburger poga pa kreisi virs header -->
+    <button class="icon-btn menu-btn" id="menuBtn" aria-label="Atvert izvelni">☰</button>
+
+    <!-- LOGO PA VIRSU (ja tev ir logo.png ar caurspidigu fonu) -->
+    <img src="./images/logo.png" alt="Her Place logo" class="header-logo">
+
+    <!-- overlay izvelne -->
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <div class="mobile-panel">
+        <div class="mobile-head">
+          <div class="mobile-title">Izvelne</div>
+          <button class="icon-btn" id="closeMenuBtn" aria-label="Aizvert izvelni">✕</button>
+        </div>
+
+        <a href="#par-mani" class="m-link">Par mani</a>
+        <a href="#cenradis" class="m-link">Cenrādis</a>
+        <a href="noteikumi.html" class="m-link">Noteikumi</a>
+        <a href="#kontakti" class="m-link">Kontakti</a>
+        <a href="#pieraksts" class="m-link m-cta">Pieraksts</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="par-mani" class="section hero">
+      <div class="container">
+        <h1 class="h1">Par mani</h1>
+        <div class="about-text">
+  
+
+  <p>Sveikas meitenes! 🤍</p>
+
+  <p>
+    Esmu Daina, tava esošā un iespējams topošā skropstu meistare, kurai patīk
+    dabīgs skaistums ar mazu <span class="wow">wow</span> efektu ✨
+  </p>
+
+  <p>Šobrīd piedāvāju <strong>Klasiku 1:1</strong>.</p>
+
+  <p>
+    Strādāju rūpīgi, ar mīlestību pret detaļām un skropstām, kas izceļ Tavu
+    skatienu, nevis to noslogo.
+  </p>
+
+  <p>
+    Brīvajā laikā tikai un vienīgi pavadu laiku ar ģimeni vai sev tuviem
+    cilvēkiem jebkurā pasaules malā ❤️
+  </p>
+
+  <p>Atmosfēra mierīga, skaistas skropstas un garastāvoklis uzlabots 🤍</p>
+
+  <p>Tiekamies drīz 🫶🏼</p>
+</div>
+
+        <div class="actions">
+  <a class="btn" href="#pieraksts">Piesakies procedūrai</a>
+
+  <a
+    class="instagram-logo"
+    href="https://www.instagram.com/herplace_skropstas"
+    target="_blank"
+    rel="noreferrer"
+    aria-label="Instagram"
+  >
+    <img src="./images/ig.png" alt="Instagram">
+  </a>
+</div>
+
+
+      </div>
+    </section>
+
+    
+
+    <section id="cenradis" class="section alt">
+  <div class="container">
+    <h2 class="h2">Cenrādis</h2>
+
+    <div class="price-list">
+      <div class="price-item">
+        <span class="service">Skropstu pieaudzēšana – Klasika 1:1</span>
+        <span class="price">20 €</span>
+      </div>
+
+      <div class="price-item">
+        <span class="service">Alerģijas tests</span>
+        <span class="price">10 €</span>
+      </div>
+
+      <div class="price-item">
+        <span class="service">
+          Skropstu noņemšana no cita meistara
+          <small>(ar turpmāko pieaudzēšanu)</small>
+        </span>
+        <span class="price">5 €</span>
+      </div>
+
+      <div class="price-item">
+        <span class="service">
+          Skropstu noņemšana
+          <small>(bez tālākās pieaudzēšanas)</small>
+        </span>
+        <span class="price">10 €</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <section id="kontakti" class="section">
+      <div class="container">
+        <h2 class="h2">Kontakti</h2>
+        <p class="muted">Telefons un adrese pagaidam tiks precizeti.</p>
+        <p><b>Telefons:</b> +371 XXXXXXXX</p>
+        <p><b>Adrese:</b> tiks precizeta</p>
+      </div>
+    </section>
+
+    <section id="pieraksts" class="section alt">
+      <div class="container">
+        <h2 class="h2">Pieraksts</h2>
+
+        <form id="reservationForm" class="form">
+          <label>Vards, uzvards</label>
+          <input id="full_name" required>
+
+          <label>E-pasts</label>
+          <input id="email" type="email" required>
+
+          <label>Telefons</label>
+          <input id="phone" placeholder="+371..." required>
+
+          <div class="row">
+            <div>
+              <label>Datums</label>
+              <input id="date" type="date" required>
+            </div>
+
+            <div>
+              <label>Laiks</label>
+              <!-- LAIKUS IELIKS JS NO BACKEND -->
+              <select id="time" required>
+                <option value="">Izvelies laiku</option>
+              </select>
+            </div>
+          </div>
+
+          <label>Piezimes</label>
+          <textarea id="notes" rows="4" required></textarea>
+
+          <div class="rules">
+            <label class="cb">
+              <input id="rules_ok" type="checkbox" required>
+              Esmu iepazinusies ar noteikumiem
+            </label>
+            <a class="link" href="noteikumi.html" target="_blank" rel="noreferrer">Atvert noteikumus</a>
+          </div>
+
+          <button class="btn full" type="submit">Nosutit pierakstu</button>
+          <div id="formStatus" class="status"></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script src="./js/app.js"></script>
+</body>
+</html>

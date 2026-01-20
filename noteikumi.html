@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Noteikumi — Her Place</title>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+
+  <header class="site-header" id="top">
+    <!-- LOGO kā attēls (nevis background) -> 100% strādās arī atverot ar klikšķi -->
+    <img class="header-bg" src="./images/background.jpg" alt="background">
+
+    <!-- hamburger poga pa kreisi virs logo -->
+    <button class="icon-btn menu-btn" id="menuBtn" aria-label="Atvert izvelni">☰</button>
+	
+	 <!-- LOGO PA VIRSU -->
+  <img src="./images/logo.png" alt="Her Place logo" class="header-logo">
+
+    <!-- overlay izvelne -->
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <div class="mobile-panel">
+        <div class="mobile-head">
+          <div class="mobile-title">Izvelne</div>
+          <button class="icon-btn" id="closeMenuBtn" aria-label="Aizvert izvelni">✕</button>
+        </div>
+
+		<a href="index.html#par-mani" class="m-link">Par mani</a>
+		<a href="index.html#cenradis" class="m-link">Cenradis</a>
+		<a href="noteikumi.html" class="m-link">Noteikumi</a>
+		<a href="index.html#kontakti" class="m-link">Kontakti</a>
+		<a href="index.html#pieraksts" class="m-link m-cta">Pieraksts</a>
+
+      </div>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <h1 class="h1">Noteikumi</h1>
+      <p class="muted">Šeit ieliksi savus noteikumus (var būt ļoti gari).</p>
+
+      <div class="card">
+        <h2 class="h2">Paraugs</h2>
+        <ul>
+          <li>Atcelsana lidz 24h pirms pieraksta.</li>
+          <li>Kavesana — ludzu pazino.</li>
+          <li>Ja jutigas acis — noradi piezimēs.</li>
+        </ul>
+
+        <a class="btn" href="index.html#pieraksts">Atpakal uz pierakstu</a>
+      </div>
+    </div>
+  </main>
+
+  <script src="./js/app.js"></script>
+</body>
+</html>
